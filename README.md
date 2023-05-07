@@ -63,9 +63,9 @@ After you're finished please remove all the comments and instructions!
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [your_project_name] <a name="about-project"></a>
+# 📖 [BASICS OF SQL] <a name="about-project"></a>
 
-> Describe your project in 1 or 2 sentences.
+> This project is an introduction to the undertanding and operations behind databses and how to structure them programmatically.
 
 **[your_project__name]** is a...
 
@@ -102,9 +102,9 @@ After you're finished please remove all the comments and instructions!
 
 > Describe between 1-3 key features of the application.
 
-- **[key_feature_1]**
-- **[key_feature_2]**
-- **[key_feature_3]**
+- **[SQL table creation queries]**
+- **[SQL data infusion queries]**
+- **[SQL item selection queries]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -129,7 +129,7 @@ To get a local copy up and running, follow these steps.
 ### Prerequisites
 
 In order to run this project you need:
-
+- **[Postgresql]**
 <!--
 Example command:
 
@@ -153,7 +153,7 @@ Example commands:
 
 ### Install
 
-Install this project with:
+no installations needed
 
 <!--
 Example command:
