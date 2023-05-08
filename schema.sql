@@ -6,5 +6,6 @@ CREATE TABLE animals
     escape_attempts integer,
     neutered boolean,
     weight_kg numeric,
+    species text COLLATE pg_catalog."default",
     CONSTRAINT animals_pkey PRIMARY KEY (id)
 )
