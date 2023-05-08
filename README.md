@@ -191,8 +191,6 @@ I would like to thank <a href="https://www.microverse.org/">MICROVERSE FOR THEIR
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 <!-- LICENSE -->
 ## 📝 License <a name="license"></a>
 <p>This project is <a href="/LICENSE.md">MIT</a> licensed</p>
