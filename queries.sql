@@ -116,3 +116,71 @@ GROUP BY owners.full_name
 ORDER BY animal_count DESC
 LIMIT 1;
 
+
+SELECT a.name AS animal_name
+FROM animals a
+INNER JOIN visits v ON a.id = v.animal_id
+INNER JOIN vets vt ON v.vet_id = vt.id
+WHERE vt.name = 'William Tatcher'
+ORDER BY v.visit_date DESC
+LIMIT 1;
+
+SELECT COUNT(DISTINCT a.id) AS num_animals
+FROM animals a
+INNER JOIN visits v ON a.id = v.animal_id
+INNER JOIN vets vt ON v.vet_id = vt.id
+WHERE vt.name = 'Stephanie Mendez';
+
+
+SELECT vt.name AS vet_name, s.name AS specialty_name
+FROM vets vt
+LEFT JOIN vet_specialties vs ON vt.id = vs.vet_id
+LEFT JOIN specialties s ON vs.specialty_id = s.id
+ORDER BY vt.name;
+
+SELECT a.name AS animal_name, v.visit_date
+FROM animals a
+INNER JOIN visits v ON a.id = v.animal_id
+INNER JOIN vets vt ON v.vet_id = vt.id
+WHERE vt.name = 'Stephanie Mendez' AND v.visit_date BETWEEN '2020-04-01' AND '2020-08-30'
+ORDER BY v.visit_date;
+
+SELECT a.name AS animal_name, COUNT(v.id) AS num_visits
+FROM animals a
+INNER JOIN visits v ON a.id = v.animal_id
+GROUP BY a.id
+ORDER BY num_visits DESC
+LIMIT 1;
+
+SELECT vt.name AS vet_name, v.visit_date
+FROM visits v
+INNER JOIN vets vt ON v.vet_id = vt.id
+INNER JOIN animals a ON v.animal_id = a.id
+WHERE a.name = 'Pikachu' AND vt.name = 'Maisy Smith'
+ORDER BY v.visit_date
+LIMIT 1;
+
+SELECT a.name AS animal_name, vt.name AS vet_name, v.visit_date
+FROM visits v
+INNER JOIN vets vt ON v.vet_id = vt.id
+INNER JOIN animals a ON v.animal_id = a.id
+ORDER BY v.visit_date DESC
+LIMIT 1;
+
+SELECT COUNT(*) AS num_visits
+FROM visits v
+INNER JOIN vets vt ON v.vet_id = vt.id
+INNER JOIN animals a ON v.animal_id = a.id
+LEFT JOIN vet_specialties vs ON vt.id = vs.vet_id AND a.species_id = vs.specialty_id
+WHERE vs.specialty_id IS NULL;
+
+
+SELECT a.species, COUNT(*) AS total_visits, s.name AS specialty
+FROM animals a
+JOIN visits v ON a.id = v.animal_id
+JOIN vets vt ON v.vet_id = vt.id
+LEFT JOIN specialties s ON vt.specialty_id = s.id
+WHERE vt.name = 'Maisy Smith'
+GROUP BY a.species
+ORDER BY total_visits DESC
+LIMIT 1;
