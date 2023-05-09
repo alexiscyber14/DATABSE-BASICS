@@ -149,8 +149,8 @@ To make use of this project, just clone it and execute the code blocks in you po
 👤 **Author1**
 
 - GitHub: [@alexiscyber14](https://github.com/alexiscyber14)
--Instagram:[@Alexiscyber14](https://www.instagram.com/alexiscyber14/)
--LinkedIn:[@Alex_Ssenyoondo](https://www.linkedin.com/in/alex-software/)
+- Instagram:[@Alexiscyber14](https://www.instagram.com/alexiscyber14/)
+- LinkedIn:[@Alex_Ssenyoondo](https://www.linkedin.com/in/alex-software/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

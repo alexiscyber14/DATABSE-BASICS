@@ -26,6 +26,8 @@ VALUES ('Sam Smith', 34),
 
 
 
+INSERT INTO species (name) VALUES ('Pokemon'), ('Digimon');
+
 
 
 
@@ -38,10 +40,16 @@ SELECT * FROM animals;
 
 UPDATE animals SET owner_id = (
   CASE 
-    WHEN name = 'Agumon' THEN (SELECT id FROM owners WHERE full_name = 'Sam Smith')
-    WHEN name = 'Gabumon' OR name = 'Pikachu' THEN (SELECT id FROM owners WHERE full_name = 'Jennifer Orwell')
-    WHEN name = 'Devimon' OR name = 'Plantmon' THEN (SELECT id FROM owners WHERE full_name = 'Bob')
-    WHEN name = 'Charmander' OR name = 'Squirtle' OR name = 'Blossom' THEN (SELECT id FROM owners WHERE full_name = 'Melody Pond')
-    WHEN name = 'Angemon' OR name = 'Boarmon' THEN (SELECT id FROM owners WHERE full_name = 'Dean Winchester')
+    WHEN name = 'Agumon' AND owner_id IS NULL THEN (SELECT id FROM owners WHERE full_name = 'Sam Smith')
+    WHEN name = 'Gabumon' AND owner_id IS NULL THEN (SELECT id FROM owners WHERE full_name = 'Jennifer Orwell')
+    WHEN name = 'Pikachu' AND owner_id IS NULL THEN (SELECT id FROM owners WHERE full_name = 'Jennifer Orwell')
+    WHEN name = 'Devimon' AND owner_id IS NULL THEN (SELECT id FROM owners WHERE full_name = 'Bob')
+    WHEN name = 'Plantmon' AND owner_id IS NULL THEN (SELECT id FROM owners WHERE full_name = 'Bob')
+    WHEN name = 'Charmander' AND owner_id IS NULL THEN (SELECT id FROM owners WHERE full_name = 'Melody Pond')
+    WHEN name = 'Squirtle' AND owner_id IS NULL THEN (SELECT id FROM owners WHERE full_name = 'Melody Pond')
+    WHEN name = 'Blossom' AND owner_id IS NULL THEN (SELECT id FROM owners WHERE full_name = 'Melody Pond')
+    WHEN name = 'Angemon' AND owner_id IS NULL THEN (SELECT id FROM owners WHERE full_name = 'Dean Winchester')
+    WHEN name = 'Boarmon' AND owner_id IS NULL THEN (SELECT id FROM owners WHERE full_name = 'Dean Winchester')
   END
 );
+
